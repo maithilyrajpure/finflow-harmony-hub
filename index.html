@@ -1,26 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>finflow-harmony-hub</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FinTrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="debt.html">Debt</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="user-menu">
+        <span id="username">Guest</span>
+        <a href="login.html" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
 
-    <meta property="og:title" content="finflow-harmony-hub" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <main class="dashboard-container">
+    <h1>Financial Dashboard</h1>
+    
+    <div class="welcome-message">
+      <h2>Welcome to your Financial Dashboard</h2>
+      <p>Track your expenses, manage your budget, and plan your debt repayment all in one place.</p>
+    </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <div class="dashboard-overview">
+      <div class="dashboard-card">
+        <h3>Expenses Summary</h3>
+        <div class="dashboard-chart" id="expensesChart">
+          <!-- Chart will be inserted here via JavaScript -->
+        </div>
+        <a href="expenses.html" class="dashboard-link">Manage Expenses</a>
+      </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      <div class="dashboard-card">
+        <h3>Budget Overview</h3>
+        <div class="dashboard-chart" id="budgetChart">
+          <!-- Chart will be inserted here via JavaScript -->
+        </div>
+        <a href="budget.html" class="dashboard-link">Manage Budget</a>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Debt Tracker</h3>
+        <div class="debt-summary" id="debtSummary">
+          <!-- Debt summary will be inserted here via JavaScript -->
+        </div>
+        <a href="debt.html" class="dashboard-link">Manage Debt</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Budget Alert</h2>
+      <p id="alertMessage"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FinTrack - Your Personal Financial Management Tool</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
 </html>

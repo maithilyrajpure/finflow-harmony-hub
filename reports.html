@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - Financial Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FinTrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="debt.html">Debt</a>
+        <a href="reports.html" class="active">Reports</a>
+      </div>
+      <div class="user-menu">
+        <span id="username">Guest</span>
+        <a href="login.html" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="reports-container">
+    <h1>Financial Reports</h1>
+
+    <div class="reports-controls">
+      <div class="date-filter">
+        <label for="date-range">Select Period:</label>
+        <select id="date-range">
+          <option value="month">This Month</option>
+          <option value="quarter">Last 3 Months</option>
+          <option value="year">This Year</option>
+          <option value="custom">Custom Range</option>
+        </select>
+        
+        <div id="custom-date-range" style="display: none;">
+          <label for="start-date">From:</label>
+          <input type="date" id="start-date">
+          <label for="end-date">To:</label>
+          <input type="date" id="end-date">
+        </div>
+        
+        <button id="apply-filter" class="btn">Apply</button>
+      </div>
+    </div>
+
+    <div class="reports-grid">
+      <div class="report-card">
+        <h3>Income vs. Expenses</h3>
+        <div class="report-chart" id="incomeVsExpenses"></div>
+      </div>
+
+      <div class="report-card">
+        <h3>Expense Breakdown</h3>
+        <div class="report-chart" id="expenseBreakdown"></div>
+      </div>
+
+      <div class="report-card">
+        <h3>Monthly Trend</h3>
+        <div class="report-chart" id="monthlyTrend"></div>
+      </div>
+
+      <div class="report-card">
+        <h3>Budget Adherence</h3>
+        <div class="report-chart" id="budgetAdherence"></div>
+      </div>
+    </div>
+
+    <div class="report-summary">
+      <h2>Summary</h2>
+      <div class="summary-stats">
+        <div class="stat-box">
+          <h4>Total Income</h4>
+          <p id="total-income">$3,500</p>
+        </div>
+        <div class="stat-box">
+          <h4>Total Expenses</h4>
+          <p id="total-expenses">$2,100</p>
+        </div>
+        <div class="stat-box">
+          <h4>Total Savings</h4>
+          <p id="total-savings">$1,400</p>
+        </div>
+        <div class="stat-box">
+          <h4>Saving Rate</h4>
+          <p id="saving-rate">40%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-actions">
+      <button id="download-pdf" class="btn">Download as PDF</button>
+      <button id="export-csv" class="btn">Export Data</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FinTrack - Your Personal Financial Management Tool</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>

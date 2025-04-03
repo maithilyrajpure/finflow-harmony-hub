@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
 
-## Project info
+# FinTrack - Financial Management Application
 
-**URL**: https://lovable.dev/projects/0f7a2326-12d7-4a1b-9d47-dd5dc2a1ed89
+FinTrack is a comprehensive financial management application built with PHP, JavaScript, HTML, and CSS. It includes features for expense tracking, budget planning, debt management, and financial reporting.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **User Authentication**: Secure login and registration system
+- **Dashboard**: Overview of your financial situation
+- **Expense Tracker**: Log and categorize expenses
+- **Budget Tool**: Create detailed budgets across multiple categories
+- **Debt Repayment Tool**: Track debts and get repayment strategies
+- **Financial Reports**: Visualize your financial data
+- **Budget Alerts**: Get notified when you exceed your budget
 
-**Use Lovable**
+## Setup Instructions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0f7a2326-12d7-4a1b-9d47-dd5dc2a1ed89) and start prompting.
+### Database Setup
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Create a MySQL database named `debt_tracker`
+2. Navigate to the project directory
+3. Run the database setup script: `php setup_database.php`
+4. This will create the necessary tables for the application
 
-**Use your preferred IDE**
+### Configuration
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+You may need to modify the database connection parameters in these files:
+- `login_process.php`
+- `register_process.php`
+- `setup_database.php`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The default settings are:
+- Server: localhost
+- Username: root
+- Password: (empty)
+- Database: debt_tracker
 
-Follow these steps:
+## Usage
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Start your local web server (like XAMPP, WAMP, or using PHP's built-in server)
+2. Navigate to the application in your web browser
+3. Register a new account
+4. Log in to access the dashboard
+5. Use the navigation menu to access different features
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## File Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
+- `index.html` - Dashboard/home page
+- `login.html` & `register.html` - Authentication pages
+- `expenses.html` - Expense tracking
+- `budget.html` - Budget planning
+- `debt.html` - Debt management
+- `reports.html` - Financial reporting
+- `*.js` files - JavaScript functionality
+- `*.php` files - Server-side processing
+- `styles.css` - Main stylesheet
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Local Storage Usage
 
-**Edit a file directly in GitHub**
+For demonstration purposes, some data is stored in the browser's localStorage. In a production environment, this data would be stored in the database.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## License
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0f7a2326-12d7-4a1b-9d47-dd5dc2a1ed89) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is for educational purposes. Feel free to modify and use it as needed.

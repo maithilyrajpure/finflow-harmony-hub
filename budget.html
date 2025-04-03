@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FinTrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="budget.html" class="active">Budget</a>
+        <a href="debt.html">Debt</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="user-menu">
+        <span id="username">Guest</span>
+        <a href="login.html" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Header -->
+  <header class="budget-header">
+    <h1>Personal Budget Tool</h1>
+    <p>Plan your finances effectively</p>
+  </header>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Pie Chart -->
+    <div class="chart-container">
+      <h3>Monthly Budget Overview</h3>
+      <canvas id="pieChart"></canvas>
+      <button id="net-income" class="net-income-btn">
+        NET INCOME: $<span id="net-income-amount">0</span>
+      </button>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div class="step">
+          <div class="circle" data-step="1">1</div>
+          <p>Income</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle" data-step="2">2</div>
+          <p>Housing</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle" data-step="3">3</div>
+          <p>Transportation</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle" data-step="4">4</div>
+          <p>Educational</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle" data-step="5">5</div>
+          <p>Personal</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle" data-step="6">6</div>
+          <p>Savings</p>
+        </div>
+      </div>
+
+      <!-- Forms for Each Step -->
+      <div class="form-steps">
+        <!-- Step 1: Income -->
+        <div class="form-step active" data-step="1">
+          <h2>Monthly Income</h2>
+          <div class="form-group">
+            <label for="salary">Salary/Wages</label>
+            <input type="number" id="salary" placeholder="Enter salary" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="other-income">Other Income</label>
+            <input type="number" id="other-income" placeholder="Enter other income" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="next-step btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Housing -->
+        <div class="form-step" data-step="2">
+          <h2>Housing Expenses</h2>
+          <div class="form-group">
+            <label for="mortgage">Mortgage</label>
+            <input type="number" id="mortgage" placeholder="Enter mortgage amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="rent">Rent</label>
+            <input type="number" id="rent" placeholder="Enter rent amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="insurance">Home Insurance</label>
+            <input type="number" id="insurance" placeholder="Enter Home Insurance amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="repairs">Repairs/Maintenance</label>
+            <input type="number" id="repairs" placeholder="Enter Repairs/Maintenance amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="utilities">Water/Gas/Electricity</label>
+            <input type="number" id="utilities" placeholder="Enter utilities amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="internet">Cable/TV/Internet</label>
+            <input type="number" id="internet" placeholder="Enter internet amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone/Cell</label>
+            <input type="number" id="phone" placeholder="Enter phone amount" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="prev-step btn">Back</button>
+            <button class="next-step btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Transportation -->
+        <div class="form-step" data-step="3">
+          <h2>Transportation Expenses</h2>
+          <div class="form-group">
+            <label for="car-payment">Car Payment</label>
+            <input type="number" id="car-payment" placeholder="Enter car payment" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="fuel">Gas/Fuel</label>
+            <input type="number" id="fuel" placeholder="Enter fuel amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="car-insurance">Car Insurance</label>
+            <input type="number" id="car-insurance" placeholder="Enter Car Insurance amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="car-repairs">Car Repairs</label>
+            <input type="number" id="car-repairs" placeholder="Enter Car Repairs amount" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="prev-step btn">Back</button>
+            <button class="next-step btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Educational -->
+        <div class="form-step" data-step="4">
+          <h2>Educational Expenses</h2>
+          <div class="form-group">
+            <label for="student-loan">Student Loan</label>
+            <input type="number" id="student-loan" placeholder="Enter student loan amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="books">Books & Supplies</label>
+            <input type="number" id="books" placeholder="Enter books amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="college-tuition">College Tuition</label>
+            <input type="number" id="college-tuition" placeholder="Enter College Tuition amount" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="prev-step btn">Back</button>
+            <button class="next-step btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Personal -->
+        <div class="form-step" data-step="5">
+          <h2>Personal & Food Expenses</h2>
+          <div class="form-group">
+            <label for="groceries">Groceries</label>
+            <input type="number" id="groceries" placeholder="Enter groceries amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="entertainment">Entertainment</label>
+            <input type="number" id="entertainment" placeholder="Enter entertainment amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="clothing">Clothing</label>
+            <input type="number" id="clothing" placeholder="Enter Clothing amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="medical">Medical</label>
+            <input type="number" id="medical" placeholder="Enter Medical amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="pet-supplies">Pet supplies</label>
+            <input type="number" id="pet-supplies" placeholder="Enter Pet supplies amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="other">Other expenses</label>
+            <input type="number" id="other" placeholder="Enter other amount" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="prev-step btn">Back</button>
+            <button class="next-step btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Savings -->
+        <div class="form-step" data-step="6">
+          <h2>Monthly Savings</h2>
+          <div class="form-group">
+            <label for="retirement">Retirement Savings</label>
+            <input type="number" id="retirement" placeholder="Enter retirement savings" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="emergency-fund">Emergency Fund</label>
+            <input type="number" id="emergency-fund" placeholder="Enter emergency fund amount" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="investments">Investments</label>
+            <input type="number" id="investments" placeholder="Enter Investments amount" class="form-input">
+          </div>
+          <div class="form-buttons">
+            <button class="prev-step btn">Back</button>
+            <button type="submit" id="budget-submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FinTrack - Your Personal Financial Management Tool</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+  <script src="budget.js"></script>
+</body>
+</html>

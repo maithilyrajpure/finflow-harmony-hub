@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Repayment Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="debt.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FinTrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="debt.html" class="active">Debt</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="user-menu">
+        <span id="username">Guest</span>
+        <a href="login.html" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Debt Repayment Tool</h1>
+    
+    <div class="debt-strategy-section">
+      <h2>Repayment Strategy</h2>
+      <div class="strategy-selector">
+        <button class="strategy-btn active" data-strategy="snowball">Debt Snowball</button>
+        <button class="strategy-btn" data-strategy="avalanche">Debt Avalanche</button>
+      </div>
+      <div class="strategy-description">
+        <div id="snowball-description" class="strategy-detail active">
+          <h3>Debt Snowball Method</h3>
+          <p>Pay off debts from smallest to largest balance, regardless of interest rate. This method helps build momentum by celebrating small wins early.</p>
+        </div>
+        <div id="avalanche-description" class="strategy-detail">
+          <h3>Debt Avalanche Method</h3>
+          <p>Pay off debts with the highest interest rate first. This method minimizes the total interest paid and is mathematically optimal.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="debt-tracker-section">
+      <h2>Debt Tracker</h2>
+      <div class="table-container">
+        <table id="debtTable">
+          <thead>
+            <tr>
+              <th>Debt Type</th>
+              <th>Amount Owed</th>
+              <th>Interest Rate (%)</th>
+              <th>Minimum Payment</th>
+              <th>Progress (%)</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="debtTableBody">
+            <tr id="defaultRow">
+              <td><input type="text" placeholder="Debt Type" class="debtType" /></td>
+              <td><input type="number" placeholder="Amount Owed" class="amountOwed" /></td>
+              <td><input type="number" placeholder="Interest Rate" class="interestRate" /></td>
+              <td><input type="number" placeholder="Minimum Payment" class="minPayment" /></td>
+              <td><input type="number" placeholder="Progress" class="progressInput" /></td>
+              <td>In Progress</td>
+              <td><button class="btn-delete" onclick="deleteRow(this)">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="add-row-btn" onclick="addRow()">+ Add Debt</button>
+      </div>
+    </div>
+    
+    <div class="debt-summary-section">
+      <h2>Debt Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <h3>Total Debt</h3>
+          <p id="totalDebt">$0.00</p>
+        </div>
+        <div class="summary-card">
+          <h3>Average Interest</h3>
+          <p id="avgInterest">0.00%</p>
+        </div>
+        <div class="summary-card">
+          <h3>Monthly Payment</h3>
+          <p id="monthlyPayment">$0.00</p>
+        </div>
+        <div class="summary-card">
+          <h3>Debt-Free Date</h3>
+          <p id="debtFreeDate">-</p>
+        </div>
+      </div>
+      
+      <div class="payment-plan">
+        <h3>Recommended Payment Plan</h3>
+        <div id="paymentPlan">
+          <p class="empty-plan">Add your debts to see a recommended payment plan.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button id="saveDebtBtn" class="btn btn-primary">Save Debt Data</button>
+      <button id="calculatePlanBtn" class="btn">Calculate Payment Plan</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FinTrack - Your Personal Financial Management Tool</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="debt.js"></script>
+</body>
+</html>

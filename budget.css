@@ -1,0 +1,148 @@
+
+/* Budget Tool Specific Styles */
+.budget-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chart-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#pieChart {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.net-income-btn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex: 2;
+  min-width: 450px;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  color: var(--accent-color);
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.circle.active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #ccc;
+  margin: 0 5px;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: white;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .progress-bar-container {
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    margin-bottom: 1rem;
+  }
+}
