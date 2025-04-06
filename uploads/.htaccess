@@ -1,0 +1,15 @@
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow access to files
+<FilesMatch ".*">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Deny access to sensitive file types
+<FilesMatch "\.(php|pl|py|cgi|asp|aspx|jsp|htaccess)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

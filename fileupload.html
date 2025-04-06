@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload - FinTrack</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .file-upload-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+    
+    .file-upload-area {
+      border: 2px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .file-upload-area:hover {
+      border-color: var(--accent-color);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .file-upload-icon {
+      font-size: 3rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    
+    .file-upload-text {
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    
+    .file-list {
+      margin-top: 2rem;
+    }
+    
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .file-icon {
+      margin-right: 0.75rem;
+      color: var(--accent-color);
+    }
+    
+    .file-name {
+      flex: 1;
+    }
+    
+    .file-size {
+      margin-right: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .file-progress {
+      height: 4px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    
+    .upload-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    
+    .file-status {
+      font-size: 0.9rem;
+    }
+    
+    .status-success {
+      color: #4CAF50;
+    }
+    
+    .status-error {
+      color: #F44336;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FinTrack</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="debt.html">Debt</a>
+        <a href="reports.html">Reports</a>
+        <a href="fileupload.html" class="active">Files</a>
+      </div>
+      <div class="user-menu">
+        <span id="username">Guest</span>
+        <a href="login.html" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="expense-header">
+      <h1>File Upload</h1>
+      <p>Upload and manage your financial documents</p>
+    </div>
+    
+    <div class="file-upload-container">
+      <div id="drop-area" class="file-upload-area">
+        <div class="file-upload-icon">
+          <i class="fas fa-cloud-upload-alt"></i>
+        </div>
+        <div class="file-upload-text">
+          <h3>Drag & Drop Files Here</h3>
+          <p>Or click to browse files</p>
+          <p class="text-muted">Supported formats: PDF, CSV, XLS, XLSX, JPG, PNG</p>
+        </div>
+        <input type="file" id="file-input" multiple style="display: none;">
+      </div>
+      
+      <div class="upload-actions">
+        <span class="file-status" id="upload-status"></span>
+        <button class="btn btn-primary" id="upload-btn" disabled>Upload Files</button>
+      </div>
+      
+      <div class="file-list" id="file-list"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FinTrack - Your Personal Financial Management Tool</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="fileupload.js"></script>
+</body>
+</html>
